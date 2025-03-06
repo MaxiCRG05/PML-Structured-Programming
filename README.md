@@ -1,9 +1,9 @@
 ESPAÑOL:
 
-Perceptrón Multicapa para Clasificación de Colores
+**Perceptrón Multicapa para Clasificación de Colores**
 Este proyecto implementa un perceptrón multicapa (PML) en C# para la clasificación de colores basados en sus valores RGB. El sistema permite entrenar la red neuronal con un conjunto de datos predefinidos y luego utilizar el modelo entrenado para predecir el color de un píxel seleccionado de una imagen.
 
-Características Principales
+**Características Principales**
 Clasificación de Colores: El PML es capaz de clasificar colores en 12 categorías diferentes: Rojo, Verde, Azul, Amarillo, Rosa, Naranja, Morado, Cyan, Gris, Café, Negro y Blanco.
 
 Entrenamiento Personalizado: El sistema permite entrenar la red neuronal con un conjunto de datos predefinidos o cargar un modelo previamente entrenado.
@@ -12,7 +12,7 @@ Interfaz Gráfica: La aplicación cuenta con una interfaz gráfica que permite c
 
 Persistencia de Datos: Los pesos y sesgos de la red neuronal pueden ser guardados y cargados desde archivos de texto, lo que permite reutilizar el modelo entrenado en sesiones futuras.
 
-Estructura del Proyecto
+**Estructura del Proyecto**
 El proyecto está organizado en varias clases principales:
 
 VariablesGlobales: Contiene las variables globales utilizadas en todo el sistema, como rutas de archivos, parámetros de entrenamiento y datos de entrada/salida.
@@ -23,12 +23,12 @@ Form1: Es la clase principal de la interfaz gráfica, que maneja la interacción
 
 PML: Implementa el perceptrón multicapa, incluyendo métodos para el entrenamiento, propagación, retropropagación y normalización de datos.
 
-Requisitos
+**Requisitos**
 .NET Framework: El proyecto está desarrollado en C# y requiere .NET Framework para su ejecución.
 
 Visual Studio: Se recomienda utilizar Visual Studio para abrir y compilar el proyecto.
 
-Instrucciones de Uso
+**Instrucciones de Uso**
 Compilación: Abre el proyecto en Visual Studio y compílalo.
 
 Ejecución: Ejecuta la aplicación y se abrirá la interfaz gráfica.
@@ -43,26 +43,26 @@ Predicción: Una vez entrenado el modelo, haz clic en el botón "Probar" para pr
 
 Guardar/Cargar Modelo: Puedes guardar el modelo entrenado para usarlo en sesiones futuras o cargar un modelo previamente guardado.
 
-Archivos de Configuración y Datos
+**Archivos de Configuración y Datos**
 configuracion.txt: Contiene los pesos y sesgos de la red neuronal.
 
 colores.txt: Almacena los datos de los píxeles seleccionados por el usuario.
 
-Consideraciones
+**Consideraciones**
 Precisión: La precisión del modelo depende del conjunto de datos de entrenamiento y de los parámetros configurados (tasa de aprendizaje, número de épocas, etc.).
 
 Rendimiento: El entrenamiento de la red neuronal puede ser computacionalmente costoso, especialmente con un gran número de épocas.
 
-Contribuciones
+**Contribuciones**
 Si deseas contribuir a este proyecto, siéntete libre de hacer un fork y enviar un pull request con tus mejoras.
 
 
 ENGLISH:
 
-Multilayer Perceptron for Color Classification
+**Multilayer Perceptron for Color Classification**
 This project implements a multilayer perceptron (MLP) in C# for color classification based on their RGB values. The system allows to train the neural network with a predefined data set and then use the trained model to predict the color of a selected pixel of an image.
 
-Main Features
+**Main Features**
 Color Classification: The MLP is capable of classifying colors into 12 different categories: Red, Green, Blue, Yellow, Pink, Orange, Purple, Cyan, Gray, Brown, Black and White.
 
 Custom Training: The system allows to train the neural network with a predefined data set or to load a previously trained model.
@@ -71,7 +71,7 @@ Graphical Interface: The application has a graphical interface that allows to lo
 
 Data Persistence: The weights and biases of the neural network can be saved and loaded from text files, allowing to reuse the trained model in future sessions.
 
-Project Structure
+**Project Structure**
 The project is organized into several main classes:
 
 GlobalVariables: Contains the global variables used throughout the system, such as file paths, training parameters, and input/output data.
@@ -82,12 +82,12 @@ Form1: This is the main class for the graphical interface, which handles user in
 
 PML: Implements the multilayer perceptron, including methods for training, propagation, backpropagation, and data normalization.
 
-Requirements
+**Requirements**
 .NET Framework: The project is developed in C# and requires .NET Framework to run.
 
 Visual Studio: It is recommended to use Visual Studio to open and compile the project.
 
-Instructions for Use
+**Instructions for Use**
 Compilation: Open the project in Visual Studio and compile it.
 
 Execution: Run the application and the graphical interface will open.
@@ -102,15 +102,15 @@ Prediction: Once the model is trained, click the "Test" button to predict the co
 
 Save/Load Model: You can save the trained model for use in future sessions or load a previously saved model.
 
-Configuration and Data Files
+**Configuration and Data Files**
 configuration.txt: Contains the weights and biases of the neural network.
 
 colors.txt: Stores the data for the pixels selected by the user.
 
-Considerations
+**Considerations**
 Accuracy: The accuracy of the model depends on the training dataset and the configured parameters (learning rate, number of epochs, etc.).
 
 Performance: Training the neural network can be computationally expensive, especially with a large number of epochs.
 
-Contributions
+**Contributions**
 If you would like to contribute to this project, feel free to fork it and submit a pull request with your improvements.
