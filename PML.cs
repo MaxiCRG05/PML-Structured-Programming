@@ -157,16 +157,16 @@ namespace Perceptron_Multicapa_Colores
 				neuronas[0][i] = entradas[i];
 			}
 
-			for (int i = 1; i < capas.Length; i++)
+			for (int c = 1; c < capas.Length; c++)
 			{
-				for (int j = 0; j < capas[i]; j++)
+				for (int j = 0; j < capas[c]; j++)
 				{
 					double suma = 0;
-					for (int k = 0; k < capas[i - 1]; k++)
+					for (int k = 0; k < capas[c - 1]; k++)
 					{
-						suma += neuronas[i - 1][k] * pesos[i - 1][j][k];
+						suma += neuronas[c - 1][k] * pesos[c - 1][j][k];
 					}
-					neuronas[i][j] = FuncionActivacion(suma + bias[i - 1][j]);
+					neuronas[c][j] = FuncionActivacion(suma + bias[c - 1][j]);
 				}
 			}
 
@@ -179,9 +179,9 @@ namespace Perceptron_Multicapa_Colores
 		{
 			double[] errores = new double[capas[capas.Length - 1]];
 
-			for (int i = 0; i < capas.Length; i++)
+			for (int c = 0; c < capas.Length; c++)
 			{
-				delta[i] = new double[capas[i]];
+				delta[c] = new double[capas[c]];
 			}
 				
 			for (int i = 0; i < errores.Length; i++)
@@ -191,28 +191,28 @@ namespace Perceptron_Multicapa_Colores
 				delta[capas.Length - 1][i] = errores[i] * FuncionDeActivacionDerivada(output);
 			}
 
-			for (int i = capas.Length - 2; i >= 0; i--)
+			for (int c = capas.Length - 2; c >= 0; c--)
 			{
-				for (int j = 0; j < capas[i]; j++)
+				for (int j = 0; j < capas[c]; j++)
 				{
 					double error = 0;
-					for (int k = 0; k < capas[i + 1]; k++)
+					for (int k = 0; k < capas[c + 1]; k++)
 					{
-						error += delta[i + 1][k] * pesos[i][k][j];
+						error += delta[c + 1][k] * pesos[c][k][j];
 					}
-					delta[i][j] = error * FuncionDeActivacionDerivada(neuronas[i][j]);
+					delta[c][j] = error * FuncionDeActivacionDerivada(neuronas[c][j]);
 				}
 			}
 
-			for (int i = 0; i < capas.Length - 1; i++)
+			for (int c = 0; c < capas.Length - 1; c++)
 			{
-				for (int j = 0; j < capas[i + 1]; j++)
+				for (int j = 0; j < capas[c + 1]; j++)
 				{
-					for (int k = 0; k < capas[i]; k++)
+					for (int k = 0; k < capas[c]; k++)
 					{
-						pesos[i][j][k] += tazaAprendizaje * delta[i + 1][j] * neuronas[i][k];
+						pesos[c][j][k] += tazaAprendizaje * delta[c + 1][j] * neuronas[c][k];
 					}
-					bias[i][j] += tazaAprendizaje * delta[i + 1][j];
+					bias[c][j] += tazaAprendizaje * delta[c + 1][j];
 				}
 			}
 		}
