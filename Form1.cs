@@ -14,14 +14,6 @@ namespace Perceptron_Multicapa_Colores
 {
     public partial class Form1 : Form
     {
-        string ruta, formatoArchivos, archivoColores, archivoConfiguracion;
-        static int min, max, epocas;
-        static int[] datosPerceptron;
-        static double tazaAprendizaje;
-        static string[] nombresColores;
-        static double[][] entradas, salidas;
-
-        VariablesGlobales variables = new VariablesGlobales();
         Archivos archivos;
         PML perceptronMultiCapa;
 
@@ -29,29 +21,16 @@ namespace Perceptron_Multicapa_Colores
 
         public Form1()
         {
-            ruta = variables.GetRuta();
-            formatoArchivos = variables.GetFormato();
-            archivoColores = variables.GetArchivoDatos();
-            archivoConfiguracion = variables.GetArchivoConfiguracion();
-            min = variables.GetMin();
-            max = variables.GetMax();
-            epocas = variables.GetEpocas();
-            datosPerceptron = variables.GetDatosPerceptron();
-            tazaAprendizaje = variables.GetTazaAprendizaje();
-            nombresColores = variables.GetColores();
-            entradas = variables.GetEntradas();
-            salidas = variables.GetSalidas();
+            perceptronMultiCapa = new PML(VariablesGlobales.DatosPerceptron);
 
-            perceptronMultiCapa = new PML(datosPerceptron);
-
-            archivos = new Archivos(ruta);
-            archivos.BuscarArchivo(archivoColores + formatoArchivos);
+            archivos = new Archivos(VariablesGlobales.Ruta);
+            archivos.BuscarArchivo(VariablesGlobales.Configuracion + VariablesGlobales.FormatoArchivos);
 
             InitializeComponent();
 
-            if (archivos.BuscarArchivo(archivoConfiguracion + formatoArchivos))
+            if (archivos.BuscarArchivo(VariablesGlobales.Configuracion + VariablesGlobales.FormatoArchivos))
             {
-                DialogResult dialog = MessageBox.Show($"El archivo {archivoConfiguracion.ToString()}, si se ha encontrado. ¿Deseas cargar los pesos?", caption: "Perceptron", buttons: MessageBoxButtons.YesNo);
+                DialogResult dialog = MessageBox.Show($"El archivo, si se ha encontrado. ¿Deseas cargar los pesos?", caption: "Perceptron", buttons: MessageBoxButtons.YesNo);
                 if (dialog == DialogResult.Yes)
                 {
                     perceptronMultiCapa.CargarDatos();
@@ -71,11 +50,11 @@ namespace Perceptron_Multicapa_Colores
         {
             double[] entradas = { color.R, color.G, color.B };
 
-            double[] salida = perceptronMultiCapa.Propagación(entradas, min, max);
+            double[] salida = perceptronMultiCapa.Propagación(entradas, VariablesGlobales.Min, VariablesGlobales.Max);
 
             int clasePredicha = Array.IndexOf(salida, salida.Max());
             
-            string nombreColor = nombresColores[clasePredicha];
+            string nombreColor = VariablesGlobales.NombresColores[clasePredicha];
 
             label2.Text = $"{nombreColor}";
         }
@@ -87,7 +66,7 @@ namespace Perceptron_Multicapa_Colores
 
         private void btnLimpiarPesos_MouseClick(object sender, MouseEventArgs e)
         {
-            archivos.CrearArchivo(archivoConfiguracion + formatoArchivos);
+            archivos.CrearArchivo(VariablesGlobales.Configuracion + VariablesGlobales.FormatoArchivos);
         }
 
         private void btnImagen1_MouseClick(object sender, MouseEventArgs e)
@@ -140,7 +119,7 @@ namespace Perceptron_Multicapa_Colores
         private void button2_MouseClick(object sender, MouseEventArgs e)
         {
             button2.Enabled = false;
-            perceptronMultiCapa.Entrenar(entradas, salidas, tazaAprendizaje, epocas, min, max);
+            perceptronMultiCapa.Entrenar(VariablesGlobales.Entradas, VariablesGlobales.Salidas, VariablesGlobales.TasaAprendizaje, VariablesGlobales.Epocas, VariablesGlobales.Min, VariablesGlobales.Max);
             btnProbar.Enabled = true;
 
         }
@@ -154,7 +133,7 @@ namespace Perceptron_Multicapa_Colores
                 int y = e.Y * bitmap.Height / pictureBox1.ClientSize.Height;
                 color = bitmap.GetPixel(x, y);
                 registroColores.Text += $"R: {color.R} \tG: {color.G} \tB: {color.B}\n";
-                archivos.EscribirArchivo($"[{color.R}, {color.G}, {color.B}]", archivoColores + formatoArchivos);
+                archivos.EscribirArchivo($"[{color.R}, {color.G}, {color.B}]", VariablesGlobales.Datos + VariablesGlobales.FormatoArchivos);
             }
             else
             {

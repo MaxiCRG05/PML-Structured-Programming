@@ -14,17 +14,6 @@ namespace Perceptron_Multicapa_Colores
 	class PML
 	{
 		/// <summary>
-		/// archivoPesos: Variable para obtener el nombre del archivo de los pesos.
-		/// formatoArchivos: Variable para obtener el formato de los archivos.
-		/// </summary>
-		private readonly string archivoPesos, formatoArchivos;
-
-		/// <summary>
-		/// errorMinimo: Variable para obtener el error mínimo.
-		/// </summary>
-		private readonly double errorMinimo;
-
-		/// <summary>
 		/// capas: Variable para obtener las capas.
 		/// </summary>
 		private readonly int[] capas;
@@ -34,7 +23,6 @@ namespace Perceptron_Multicapa_Colores
 		/// </summary>
 		private readonly double[][] delta;
 
-		private readonly VariablesGlobales variables = new VariablesGlobales();
 		public readonly Archivos archivo;
 
 		private double[][] neuronas; 
@@ -43,12 +31,9 @@ namespace Perceptron_Multicapa_Colores
 
 		public PML(int[] layers)
 		{
-			formatoArchivos = variables.GetFormato();
-			archivoPesos = variables.GetArchivoConfiguracion();
-			errorMinimo = variables.GetErrorMinimo();
 			capas = layers;
 			delta = new double[capas.Length][];
-			archivo = new Archivos(variables.GetRuta());
+			archivo = new Archivos(VariablesGlobales.Ruta);
 			IniciarNeuronas();
 			IniciarBias();
 			IniciarPesos();
@@ -138,7 +123,7 @@ namespace Perceptron_Multicapa_Colores
 					}
 				}
 
-				if (errorEpoca <= errorMinimo)
+				if (errorEpoca <= VariablesGlobales.ErrorMinimo)
 				{
 					Console.WriteLine($"Entrenamiento detenido en la época {epoca + 1}. El error se disminuyó: {errorEpoca}");
 					MessageBox.Show($"Entrenamiento detenido en la época {epoca + 1}. El error se disminuyó: {errorEpoca}", "Entrenamiento");
@@ -289,7 +274,7 @@ namespace Perceptron_Multicapa_Colores
 				int neuronaActual = 0;
 				int pesoActual = 0;
 
-				while ((line = archivo.LeerArchivo(archivoPesos + formatoArchivos)) != null)
+				while ((line = archivo.LeerArchivo(VariablesGlobales.Configuracion + VariablesGlobales.FormatoArchivos)) != null)
 				{
 					if (line.StartsWith("Capa"))
 					{
@@ -339,22 +324,22 @@ namespace Perceptron_Multicapa_Colores
 			{
 				for (int i = 0; i < pesos.Length; i++)
 				{
-					archivo.EscribirArchivo($"Capa {i}:", archivoPesos + formatoArchivos);
+					archivo.EscribirArchivo($"Capa {i}:", VariablesGlobales.Configuracion + VariablesGlobales.FormatoArchivos);
 					for (int j = 0; j < pesos[i].Length; j++)
 					{
 						for (int k = 0; k < pesos[i][j].Length; k++)
 						{
-							archivo.EscribirArchivo($"Peso[{i}][{j}][{k}] = {pesos[i][j][k]}", archivoPesos + formatoArchivos);
+							archivo.EscribirArchivo($"Peso[{i}][{j}][{k}] = {pesos[i][j][k]}", VariablesGlobales.Configuracion + VariablesGlobales.FormatoArchivos);
 						}
 					}
 				}
 
 				for (int i = 0; i < bias.Length; i++)
 				{
-					archivo.EscribirArchivo($"Capa {i}:", archivoPesos + formatoArchivos);
+					archivo.EscribirArchivo($"Capa {i}:", VariablesGlobales.Configuracion + VariablesGlobales.FormatoArchivos);
 					for (int j = 0; j < bias[i].Length; j++)
 					{
-						archivo.EscribirArchivo($"Sesgo[{i}][{j}] = {bias[i][j]}", archivoPesos + formatoArchivos);
+						archivo.EscribirArchivo($"Sesgo[{i}][{j}] = {bias[i][j]}", VariablesGlobales.Configuracion + VariablesGlobales.FormatoArchivos);
 					}
 				}
 
