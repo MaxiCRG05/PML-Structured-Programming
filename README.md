@@ -6,61 +6,61 @@ Este proyecto implementa un perceptrón multicapa (PML) en C# para la clasificac
 <h2 text="bold">Características Principales</h2>
 
 <ul> 
-<li>Clasificación de Colores: El PML es capaz de clasificar colores en 12 categorías diferentes: Rojo, Verde, Azul, Amarillo, Rosa, Naranja, Morado, Cyan, Gris, Café, Negro y Blanco.</li>
+<li>Clasificación de Colores: El PML es capaz de clasificar colores en 12 categorías diferentes: Rojo, Verde, Azul, Amarillo, Rosa, Naranja, Morado, Cyan, Gris, Café, Negro y Blanco.</li><br>
 
-<li>Entrenamiento Personalizado: El sistema permite entrenar la red neuronal con un conjunto de datos predefinidos o cargar un modelo previamente entrenado.</li>
+<li>Entrenamiento Personalizado: El sistema permite entrenar la red neuronal con un conjunto de datos predefinidos o cargar un modelo previamente entrenado.</li><br>
 
-<li>Interfaz Gráfica: La aplicación cuenta con una interfaz gráfica que permite cargar imágenes, seleccionar píxeles y visualizar la predicción del color.</li>
+<li>Interfaz Gráfica: La aplicación cuenta con una interfaz gráfica que permite cargar imágenes, seleccionar píxeles y visualizar la predicción del color.</li><br>
 
-<li>Persistencia de Datos: Los pesos y sesgos de la red neuronal pueden ser guardados y cargados desde archivos de texto, lo que permite reutilizar el modelo entrenado en sesiones futuras.</li>
+<li>Persistencia de Datos: Los pesos y sesgos de la red neuronal pueden ser guardados y cargados desde archivos de texto, lo que permite reutilizar el modelo entrenado en sesiones futuras.</li><br>
 </ul>
 
 <h2 text="bold">Estructura del Proyecto</h2>
 El proyecto está organizado en varias clases principales:
 
 <ul>
-<li>VariablesGlobales: Contiene las variables globales utilizadas en todo el sistema, como rutas de archivos, parámetros de entrenamiento y datos de entrada/salida.</li>
+<li>VariablesGlobales: Contiene las variables globales utilizadas en todo el sistema, como rutas de archivos, parámetros de entrenamiento y datos de entrada/salida.</li><br>
 
-<li>Archivos: Maneja la lectura y escritura de archivos, incluyendo la creación, limpieza y escritura de archivos de configuración y datos.</li>
+<li>Archivos: Maneja la lectura y escritura de archivos, incluyendo la creación, limpieza y escritura de archivos de configuración y datos.</li><br>
 
-<li>Form1: Es la clase principal de la interfaz gráfica, que maneja la interacción del usuario, la carga de imágenes, la selección de píxeles y la visualización de resultados.</li>
+<li>Form1: Es la clase principal de la interfaz gráfica, que maneja la interacción del usuario, la carga de imágenes, la selección de píxeles y la visualización de resultados.</li><br>
 
-<li>PML: Implementa el perceptrón multicapa, incluyendo métodos para el entrenamiento, propagación, retropropagación y normalización de datos.</li>
+<li>PML: Implementa el perceptrón multicapa, incluyendo métodos para el entrenamiento, propagación, retropropagación y normalización de datos.</li><br>
 </ul>
 
 <h2 text="bold">Requisitos</h2>
 <ul>
-<li>.NET Framework: El proyecto está desarrollado en C# y requiere .NET Framework para su ejecución.</li>
+<li>.NET Framework: El proyecto está desarrollado en C# y requiere .NET Framework para su ejecución.</li><br>
 
-<li>Visual Studio: Se recomienda utilizar Visual Studio para abrir y compilar el proyecto.</li>
+<li>Visual Studio: Se recomienda utilizar Visual Studio para abrir y compilar el proyecto.</li><br>
 </ul>
 <h2 text="bold">Instrucciones de Uso</h2>
 <ol>
-<li>Compilación: Abre el proyecto en Visual Studio y compílalo.</li>
+<li>Compilación: Abre el proyecto en Visual Studio y compílalo.</li><br>
 
-<li>Ejecución: Ejecuta la aplicación y se abrirá la interfaz gráfica.</li>
+<li>Ejecución: Ejecuta la aplicación y se abrirá la interfaz gráfica.</li><br>
 
-<li>Carga de Imágenes: Utiliza los botones para cargar una imagen predefinida o selecciona una imagen personalizada desde tu computadora.</li>
+<li>Carga de Imágenes: Utiliza los botones para cargar una imagen predefinida o selecciona una imagen personalizada desde tu computadora.</li><br>
 
-<li>Selección de Píxeles: Haz clic en cualquier parte de la imagen para seleccionar un píxel. El sistema mostrará los valores RGB del píxel seleccionado.</li>
+<li>Selección de Píxeles: Haz clic en cualquier parte de la imagen para seleccionar un píxel. El sistema mostrará los valores RGB del píxel seleccionado.</li><br>
 
-<li>Entrenamiento: Si no has cargado un modelo previamente entrenado, puedes entrenar la red neuronal utilizando el botón correspondiente.</li>
+<li>Entrenamiento: Si no has cargado un modelo previamente entrenado, puedes entrenar la red neuronal utilizando el botón correspondiente.</li><br>
 
-<li>Predicción: Una vez entrenado el modelo, haz clic en el botón "Probar" para predecir el color del píxel seleccionado.</li>
+<li>Predicción: Una vez entrenado el modelo, haz clic en el botón "Probar" para predecir el color del píxel seleccionado.</li><br>
 
-<li>Guardar/Cargar Modelo: Puedes guardar el modelo entrenado para usarlo en sesiones futuras o cargar un modelo previamente guardado.</li>
+<li>Guardar/Cargar Modelo: Puedes guardar el modelo entrenado para usarlo en sesiones futuras o cargar un modelo previamente guardado.</li><br>
 </ol>
 <h2 text="bold">Archivos de Configuración y Datos</h2>
 <ul>
-<li>configuracion.txt: Contiene los pesos y sesgos de la red neuronal.</li>
+<li>configuracion.txt: Contiene los pesos y sesgos de la red neuronal.</li><br>
 
-<li>colores.txt: Almacena los datos de los píxeles seleccionados por el usuario.</li>
+<li>colores.txt: Almacena los datos de los píxeles seleccionados por el usuario.</li><br>
 </ul>
 <h2 text="bold">Consideraciones</h2>
 <ul>
-<li>Precisión: La precisión del modelo depende del conjunto de datos de entrenamiento y de los parámetros configurados (tasa de aprendizaje, número de épocas, etc.).</li>
+<li>Precisión: La precisión del modelo depende del conjunto de datos de entrenamiento y de los parámetros configurados (tasa de aprendizaje, número de épocas, etc.).</li><br>
 
-<li>Rendimiento: El entrenamiento de la red neuronal puede ser computacionalmente costoso, especialmente con un gran número de épocas.</li>
+<li>Rendimiento: El entrenamiento de la red neuronal puede ser computacionalmente costoso, especialmente con un gran número de épocas.</li><br>
 </ul>
 <h2 text="bold">Contribuciones</h2>
 <h3 text="bold">Si deseas contribuir a este proyecto, siéntete libre de hacer un fork y enviar un pull request con tus mejoras.</h3>
