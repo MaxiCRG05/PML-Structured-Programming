@@ -50,7 +50,7 @@ namespace Perceptron_Multicapa_Colores
         {
             double[] entradas = { color.R, color.G, color.B };
 
-            double[] salida = perceptronMultiCapa.Propagación(entradas, VariablesGlobales.Min, VariablesGlobales.Max);
+            double[] salida = perceptronMultiCapa.Propagación(entradas);
 
             int clasePredicha = Array.IndexOf(salida, salida.Max());
             
@@ -119,7 +119,7 @@ namespace Perceptron_Multicapa_Colores
         private void button2_MouseClick(object sender, MouseEventArgs e)
         {
             button2.Enabled = false;
-            perceptronMultiCapa.Entrenar(VariablesGlobales.Entradas, VariablesGlobales.Salidas, VariablesGlobales.TasaAprendizaje, VariablesGlobales.Epocas, VariablesGlobales.Min, VariablesGlobales.Max);
+            perceptronMultiCapa.Entrenar();
             btnProbar.Enabled = true;
 
         }

@@ -23,12 +23,30 @@ namespace Perceptron_Multicapa_Colores
 		/// </summary>
 		private readonly double[][] delta;
 
+		/// <summary>
+		/// Instancia de la clase Archivos.
+		/// </summary>
 		public readonly Archivos archivo;
 
-		private double[][] neuronas; 
+		/// <summary>
+		/// neuronas: Variable para obtener las neuronas.
+		/// </summary>
+		private double[][] neuronas;
+
+		/// <summary>
+		/// pesos: Variable para obtener los pesos.
+		/// </summary>
 		private double[][][] pesos;
+
+		/// <summary>
+		/// bias: Variable para obtener los sesgos.
+		/// </summary>
 		private double[][] bias;
 
+		/// <summary>
+		/// Constructor de la clase PML.
+		/// </summary>
+		/// <param name="layers"></param>
 		public PML(int[] layers)
 		{
 			capas = layers;
@@ -39,6 +57,9 @@ namespace Perceptron_Multicapa_Colores
 			IniciarPesos();
 		}
 
+		/// <summary>
+		/// Método para iniciar las neuronas.
+		/// </summary>
 		private void IniciarNeuronas()
 		{
 			neuronas = new double[capas.Length][];
@@ -49,7 +70,10 @@ namespace Perceptron_Multicapa_Colores
 			}
 		}
 
-		//MÉTODO DE XAVIER (GLOROT)
+		/// <summary>
+		/// MÉTODO DE XAVIER (GLOROT)
+		/// Método para iniciar los pesos. 
+		/// </summary>
 		private void IniciarPesos()
 		{
 			Random rand = new Random();
@@ -72,6 +96,9 @@ namespace Perceptron_Multicapa_Colores
 			}
 		}
 
+		/// <summary>
+		/// Método para iniciar los sesgos.
+		/// </summary>
 		private void IniciarBias()
 		{
 			bias = new double[capas.Length - 1][];
@@ -85,28 +112,31 @@ namespace Perceptron_Multicapa_Colores
 			}
 		}
 
-		public void Entrenar(double[][] entradas, double[][] salidas, double tazaAprendizaje, int epocas, int min, int max)
+		/// <summary>
+		/// Método para entrenar la red neuronal.
+		/// </summary>
+		public void Entrenar()
 		{
 			double mejorError = double.MaxValue;
 			int epocasSinMejora = 0;
 			const int paciencia = 1000;
 
-			for (int epoca = 0; epoca < epocas; epoca++)
+			for (int epoca = 0; epoca < VariablesGlobales.Epocas; epoca++)
 			{
 				double errorEpoca = 0;
 
-				for (int i = 0; i < entradas.Length; i++)
+				for (int i = 0; i < VariablesGlobales.Entradas.Length; i++)
 				{
-					Propagación(entradas[i], min, max);
-					Retropropagación(salidas[i], tazaAprendizaje);
+					Propagación(VariablesGlobales.Entradas[i]);
+					Retropropagación(VariablesGlobales.Salidas[i]);
 
-					for (int j = 0; j < salidas[i].Length; j++)
+					for (int j = 0; j < VariablesGlobales.Salidas[i].Length; j++)
 					{
-						errorEpoca += Math.Pow(salidas[i][j] - neuronas[capas.Length - 1][j], 2); 
+						errorEpoca += Math.Pow(VariablesGlobales.Salidas[i][j] - neuronas[capas.Length - 1][j], 2); 
 					}
-				}
+				}	
 
-				errorEpoca /= (entradas.Length * salidas[0].Length);
+				errorEpoca /= (VariablesGlobales.Entradas.Length * VariablesGlobales.Salidas[0].Length);
 
 				if (errorEpoca < mejorError)
 				{
@@ -133,13 +163,18 @@ namespace Perceptron_Multicapa_Colores
 			MessageBox.Show($"Entrenamiento finalizado.", "Entrenamiento");
 		}
 
-		public double[] Propagación(double[] entradas, int min, int max)
+		/// <summary>
+		/// Método para la propagación de la red neuronal.
+		/// </summary>
+		/// <param name="x">Patrones para procesar por la red neuronal.</param>
+		/// <returns>Retorna la salida obtenida por la red neuronal.</returns>
+		public double[] Propagación(double[] x)
 		{
-			entradas = NormalizarValores(entradas, min, max);
+			x = NormalizarValores(x);
 
-			for (int i = 0; i < entradas.Length; i++)
+			for (int i = 0; i < x.Length; i++)
 			{
-				neuronas[0][i] = entradas[i];
+				neuronas[0][i] = x[i];
 			}
 
 			for (int c = 1; c < capas.Length; c++)
@@ -160,7 +195,11 @@ namespace Perceptron_Multicapa_Colores
 			return neuronas[capas.Length - 1];
 		}
 
-		private void Retropropagación(double[] salidaEsperada, double tazaAprendizaje)
+		/// <summary>
+		/// Método para la retropropagación de la red neuronal.
+		/// </summary>
+		/// <param name="salidaEsperada">Salidas esperadas por parte de la red neuronal.</param>
+		private void Retropropagación(double[] salidaEsperada)
 		{
 			double[] errores = new double[capas[capas.Length - 1]];
 
@@ -195,14 +234,18 @@ namespace Perceptron_Multicapa_Colores
 				{
 					for (int k = 0; k < capas[c]; k++)
 					{
-						pesos[c][j][k] += tazaAprendizaje * delta[c + 1][j] * neuronas[c][k];
+						pesos[c][j][k] += VariablesGlobales.TasaAprendizaje * delta[c + 1][j] * neuronas[c][k];
 					}
-					bias[c][j] += tazaAprendizaje * delta[c + 1][j];
+					bias[c][j] += VariablesGlobales.TasaAprendizaje * delta[c + 1][j];
 				}
 			}
 		}
 
-		//FUNCIÓN SOFTMAX
+		/// <summary>
+		/// Método para la función de activación Softmax.
+		/// </summary>
+		/// <param name="x">valores de entrada.</param>
+		/// <returns>Valores ya procesados.</returns>
 		private double[] Softmax(double[] x)
 		{
 			double[] expValues = x.Select(n => (double)Math.Exp(n)).ToArray();
@@ -244,18 +287,29 @@ namespace Perceptron_Multicapa_Colores
 			return x > 0 ? 1 : 0.01;
 		}
 
-		public double NormalizarValores(double x, int min, int max)
+		/// <summary>
+		/// Método para normalizar los valores.
+		/// </summary>
+		/// <param name="x">Valor para normalizar</param>
+		/// <returns>Regresa el valor normalizado</returns>
+		public double NormalizarValores(double x)
 		{
-			return (x - min) / (max - min);
+			return (x - VariablesGlobales.Min) / (VariablesGlobales.Max - VariablesGlobales.Min);
 		}
 
-		public double[] NormalizarValores(double[] x, int min, int max)
+		/// <summary>
+		/// Método para normalizar los valores.
+		/// </summary>
+		/// <param name="x">Valores de entrada.</param>
+		/// <returns>Regresa los valores ya normalizados.</returns>
+		/// <exception cref="Exception">El valor excede el rango</exception>
+		public double[] NormalizarValores(double[] x)
 		{
 			double[] resultado = new double[x.Length];
 
 			for (int i = 0; i < x.Length; i++)
 			{
-				resultado[i] = (x[i] - min) / (max - min);
+				resultado[i] = (x[i] - VariablesGlobales.Min) / (VariablesGlobales.Max - VariablesGlobales.Min);
 				if (resultado[i] < 0 || resultado[i] > 1)
 				{
 					throw new Exception($"Valor normalizado fuera de rango: {resultado[i]}");
@@ -265,6 +319,10 @@ namespace Perceptron_Multicapa_Colores
 			return resultado;
 		}
 
+		/// <summary>
+		/// Método para cargar los datos.
+		/// </summary>
+		/// <returns>Regresa "true" si se pueden cargar los datos.</returns>
 		public bool CargarDatos()
 		{
 			try
@@ -318,6 +376,9 @@ namespace Perceptron_Multicapa_Colores
 			}
 		}
 
+		/// <summary>
+		/// Método para guardar los datos.
+		/// </summary>
 		public void GuardarDatos()
 		{
 			try
