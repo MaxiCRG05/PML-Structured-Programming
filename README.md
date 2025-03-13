@@ -18,13 +18,15 @@ Este proyecto implementa un perceptrón multicapa (PML) en C# para la clasificac
 <h2 text="bold">Estructura del Proyecto</h2>
 El proyecto está organizado en varias clases principales:
 
-VariablesGlobales: Contiene las variables globales utilizadas en todo el sistema, como rutas de archivos, parámetros de entrenamiento y datos de entrada/salida.
+<ul>
+<li>VariablesGlobales: Contiene las variables globales utilizadas en todo el sistema, como rutas de archivos, parámetros de entrenamiento y datos de entrada/salida.</li>
 
-Archivos: Maneja la lectura y escritura de archivos, incluyendo la creación, limpieza y escritura de archivos de configuración y datos.
+<li>Archivos: Maneja la lectura y escritura de archivos, incluyendo la creación, limpieza y escritura de archivos de configuración y datos.</li>
 
-Form1: Es la clase principal de la interfaz gráfica, que maneja la interacción del usuario, la carga de imágenes, la selección de píxeles y la visualización de resultados.
+<li>Form1: Es la clase principal de la interfaz gráfica, que maneja la interacción del usuario, la carga de imágenes, la selección de píxeles y la visualización de resultados.</li>
 
-PML: Implementa el perceptrón multicapa, incluyendo métodos para el entrenamiento, propagación, retropropagación y normalización de datos.
+<li>PML: Implementa el perceptrón multicapa, incluyendo métodos para el entrenamiento, propagación, retropropagación y normalización de datos.</li>
+</ul>
 
 <h2 text="bold">Requisitos</h2>
 .NET Framework: El proyecto está desarrollado en C# y requiere .NET Framework para su ejecución.
