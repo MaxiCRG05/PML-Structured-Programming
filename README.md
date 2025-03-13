@@ -51,17 +51,19 @@ El proyecto está organizado en varias clases principales:
 <li>Guardar/Cargar Modelo: Puedes guardar el modelo entrenado para usarlo en sesiones futuras o cargar un modelo previamente guardado.</li>
 </ol>
 <h2 text="bold">Archivos de Configuración y Datos</h2>
-configuracion.txt: Contiene los pesos y sesgos de la red neuronal.
+<ul>
+<li>configuracion.txt: Contiene los pesos y sesgos de la red neuronal.</li>
 
-colores.txt: Almacena los datos de los píxeles seleccionados por el usuario.
-
+<li>colores.txt: Almacena los datos de los píxeles seleccionados por el usuario.</li>
+</ul>
 <h2 text="bold">Consideraciones</h2>
-Precisión: La precisión del modelo depende del conjunto de datos de entrenamiento y de los parámetros configurados (tasa de aprendizaje, número de épocas, etc.).
+<ul>
+<li>Precisión: La precisión del modelo depende del conjunto de datos de entrenamiento y de los parámetros configurados (tasa de aprendizaje, número de épocas, etc.).</li>
 
-Rendimiento: El entrenamiento de la red neuronal puede ser computacionalmente costoso, especialmente con un gran número de épocas.
-
+<li>Rendimiento: El entrenamiento de la red neuronal puede ser computacionalmente costoso, especialmente con un gran número de épocas.</li>
+</ul>
 <h2 text="bold">Contribuciones</h2>
-Si deseas contribuir a este proyecto, siéntete libre de hacer un fork y enviar un pull request con tus mejoras.
+<h3 text="bold">Si deseas contribuir a este proyecto, siéntete libre de hacer un fork y enviar un pull request con tus mejoras.</h3>
 
 
 <h1 text="bold">ENGLISH:</h1>
