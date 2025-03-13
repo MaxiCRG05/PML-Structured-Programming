@@ -4,13 +4,16 @@
 Este proyecto implementa un perceptrón multicapa (PML) en C# para la clasificación de colores basados en sus valores RGB. El sistema permite entrenar la red neuronal con un conjunto de datos predefinidos y luego utilizar el modelo entrenado para predecir el color de un píxel seleccionado de una imagen.
 
 <h2 text="bold">Características Principales</h2>
-Clasificación de Colores: El PML es capaz de clasificar colores en 12 categorías diferentes: Rojo, Verde, Azul, Amarillo, Rosa, Naranja, Morado, Cyan, Gris, Café, Negro y Blanco.
 
-Entrenamiento Personalizado: El sistema permite entrenar la red neuronal con un conjunto de datos predefinidos o cargar un modelo previamente entrenado.
+<ul> 
+<li>Clasificación de Colores: El PML es capaz de clasificar colores en 12 categorías diferentes: Rojo, Verde, Azul, Amarillo, Rosa, Naranja, Morado, Cyan, Gris, Café, Negro y Blanco.</li>
 
-Interfaz Gráfica: La aplicación cuenta con una interfaz gráfica que permite cargar imágenes, seleccionar píxeles y visualizar la predicción del color.
+<li>Entrenamiento Personalizado: El sistema permite entrenar la red neuronal con un conjunto de datos predefinidos o cargar un modelo previamente entrenado.</li>
 
-Persistencia de Datos: Los pesos y sesgos de la red neuronal pueden ser guardados y cargados desde archivos de texto, lo que permite reutilizar el modelo entrenado en sesiones futuras.
+<li>Interfaz Gráfica: La aplicación cuenta con una interfaz gráfica que permite cargar imágenes, seleccionar píxeles y visualizar la predicción del color.</li>
+
+<li>Persistencia de Datos: Los pesos y sesgos de la red neuronal pueden ser guardados y cargados desde archivos de texto, lo que permite reutilizar el modelo entrenado en sesiones futuras.</li>
+</ul>
 
 <h2 text="bold">Estructura del Proyecto</h2>
 El proyecto está organizado en varias clases principales:
