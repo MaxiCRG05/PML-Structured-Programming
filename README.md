@@ -35,20 +35,21 @@ El proyecto está organizado en varias clases principales:
 <li>Visual Studio: Se recomienda utilizar Visual Studio para abrir y compilar el proyecto.</li>
 </ul>
 <h2 text="bold">Instrucciones de Uso</h2>
-Compilación: Abre el proyecto en Visual Studio y compílalo.
+<ol>
+<li>Compilación: Abre el proyecto en Visual Studio y compílalo.</li>
 
-Ejecución: Ejecuta la aplicación y se abrirá la interfaz gráfica.
+<li>Ejecución: Ejecuta la aplicación y se abrirá la interfaz gráfica.</li>
 
-Carga de Imágenes: Utiliza los botones para cargar una imagen predefinida o selecciona una imagen personalizada desde tu computadora.
+<li>Carga de Imágenes: Utiliza los botones para cargar una imagen predefinida o selecciona una imagen personalizada desde tu computadora.</li>
 
-Selección de Píxeles: Haz clic en cualquier parte de la imagen para seleccionar un píxel. El sistema mostrará los valores RGB del píxel seleccionado.
+<li>Selección de Píxeles: Haz clic en cualquier parte de la imagen para seleccionar un píxel. El sistema mostrará los valores RGB del píxel seleccionado.</li>
 
-Entrenamiento: Si no has cargado un modelo previamente entrenado, puedes entrenar la red neuronal utilizando el botón correspondiente.
+<li>Entrenamiento: Si no has cargado un modelo previamente entrenado, puedes entrenar la red neuronal utilizando el botón correspondiente.</li>
 
-Predicción: Una vez entrenado el modelo, haz clic en el botón "Probar" para predecir el color del píxel seleccionado.
+<li>Predicción: Una vez entrenado el modelo, haz clic en el botón "Probar" para predecir el color del píxel seleccionado.</li>
 
-Guardar/Cargar Modelo: Puedes guardar el modelo entrenado para usarlo en sesiones futuras o cargar un modelo previamente guardado.
-
+<li>Guardar/Cargar Modelo: Puedes guardar el modelo entrenado para usarlo en sesiones futuras o cargar un modelo previamente guardado.</li>
+</ol>
 <h2 text="bold">Archivos de Configuración y Datos</h2>
 configuracion.txt: Contiene los pesos y sesgos de la red neuronal.
 
