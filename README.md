@@ -29,10 +29,11 @@ El proyecto está organizado en varias clases principales:
 </ul>
 
 <h2 text="bold">Requisitos</h2>
-.NET Framework: El proyecto está desarrollado en C# y requiere .NET Framework para su ejecución.
+<ul>
+\t<li>.NET Framework: El proyecto está desarrollado en C# y requiere .NET Framework para su ejecución.</li>
 
-Visual Studio: Se recomienda utilizar Visual Studio para abrir y compilar el proyecto.
-
+<li>Visual Studio: Se recomienda utilizar Visual Studio para abrir y compilar el proyecto.</li>
+</ul>
 <h2 text="bold">Instrucciones de Uso</h2>
 Compilación: Abre el proyecto en Visual Studio y compílalo.
 
