@@ -57,7 +57,7 @@ Rendimiento: El entrenamiento de la red neuronal puede ser computacionalmente co
 Si deseas contribuir a este proyecto, siéntete libre de hacer un fork y enviar un pull request con tus mejoras.
 
 
-ENGLISH:
+<h1>ENGLISH:</h1>
 
 **Multilayer Perceptron for Color Classification**
 This project implements a multilayer perceptron (MLP) in C# for color classification based on their RGB values. The system allows to train the neural network with a predefined data set and then use the trained model to predict the color of a selected pixel of an image.
