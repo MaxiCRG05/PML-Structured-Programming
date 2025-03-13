@@ -1,4 +1,4 @@
-ESPAÑOL:
+<h1>ESPAÑOL:</h1>
 
 **Perceptrón Multicapa para Clasificación de Colores**
 Este proyecto implementa un perceptrón multicapa (PML) en C# para la clasificación de colores basados en sus valores RGB. El sistema permite entrenar la red neuronal con un conjunto de datos predefinidos y luego utilizar el modelo entrenado para predecir el color de un píxel seleccionado de una imagen.
