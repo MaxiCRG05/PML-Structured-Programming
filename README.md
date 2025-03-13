@@ -28,7 +28,7 @@ PML: Implementa el perceptrón multicapa, incluyendo métodos para el entrenamie
 
 Visual Studio: Se recomienda utilizar Visual Studio para abrir y compilar el proyecto.
 
-**Instrucciones de Uso**
+<h2 text="bold">Instrucciones de Uso</h2>
 Compilación: Abre el proyecto en Visual Studio y compílalo.
 
 Ejecución: Ejecuta la aplicación y se abrirá la interfaz gráfica.
