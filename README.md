@@ -3,7 +3,7 @@
 <h2 text="bold">Perceptrón Multicapa para Clasificación de Colores</h2>
 Este proyecto implementa un perceptrón multicapa (PML) en C# para la clasificación de colores basados en sus valores RGB. El sistema permite entrenar la red neuronal con un conjunto de datos predefinidos y luego utilizar el modelo entrenado para predecir el color de un píxel seleccionado de una imagen.
 
-**Características Principales**
+<h2 text="bold">Características Principales</h2>
 Clasificación de Colores: El PML es capaz de clasificar colores en 12 categorías diferentes: Rojo, Verde, Azul, Amarillo, Rosa, Naranja, Morado, Cyan, Gris, Café, Negro y Blanco.
 
 Entrenamiento Personalizado: El sistema permite entrenar la red neuronal con un conjunto de datos predefinidos o cargar un modelo previamente entrenado.
@@ -12,7 +12,7 @@ Interfaz Gráfica: La aplicación cuenta con una interfaz gráfica que permite c
 
 Persistencia de Datos: Los pesos y sesgos de la red neuronal pueden ser guardados y cargados desde archivos de texto, lo que permite reutilizar el modelo entrenado en sesiones futuras.
 
-**Estructura del Proyecto**
+<h2 text="bold">Estructura del Proyecto</h2>
 El proyecto está organizado en varias clases principales:
 
 VariablesGlobales: Contiene las variables globales utilizadas en todo el sistema, como rutas de archivos, parámetros de entrenamiento y datos de entrada/salida.
@@ -23,7 +23,7 @@ Form1: Es la clase principal de la interfaz gráfica, que maneja la interacción
 
 PML: Implementa el perceptrón multicapa, incluyendo métodos para el entrenamiento, propagación, retropropagación y normalización de datos.
 
-**Requisitos**
+<h2 text="bold">Requisitos</h2>
 .NET Framework: El proyecto está desarrollado en C# y requiere .NET Framework para su ejecución.
 
 Visual Studio: Se recomienda utilizar Visual Studio para abrir y compilar el proyecto.
@@ -43,7 +43,7 @@ Predicción: Una vez entrenado el modelo, haz clic en el botón "Probar" para pr
 
 Guardar/Cargar Modelo: Puedes guardar el modelo entrenado para usarlo en sesiones futuras o cargar un modelo previamente guardado.
 
-**Archivos de Configuración y Datos**
+<h2 text="bold">Archivos de Configuración y Datos</h2>
 configuracion.txt: Contiene los pesos y sesgos de la red neuronal.
 
 colores.txt: Almacena los datos de los píxeles seleccionados por el usuario.
