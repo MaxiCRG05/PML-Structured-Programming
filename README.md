@@ -72,54 +72,59 @@ El proyecto está organizado en varias clases principales:
 This project implements a multilayer perceptron (MLP) in C# for color classification based on their RGB values. The system allows to train the neural network with a predefined data set and then use the trained model to predict the color of a selected pixel of an image.
 
 <h2 text="bold">Main Features</h2>
-Color Classification: The MLP is capable of classifying colors into 12 different categories: Red, Green, Blue, Yellow, Pink, Orange, Purple, Cyan, Gray, Brown, Black and White.
+<ul>
+<li>Color Classification: The MLP is capable of classifying colors into 12 different categories: Red, Green, Blue, Yellow, Pink, Orange, Purple, Cyan, Gray, Brown, Black and White.</li>
 
-Custom Training: The system allows to train the neural network with a predefined data set or to load a previously trained model.
+<li>Custom Training: The system allows to train the neural network with a predefined data set or to load a previously trained model.</li>
 
-Graphical Interface: The application has a graphical interface that allows to load images, select pixels and visualize the color prediction.
+<li>Graphical Interface: The application has a graphical interface that allows to load images, select pixels and visualize the color prediction.</li>
 
-Data Persistence: The weights and biases of the neural network can be saved and loaded from text files, allowing to reuse the trained model in future sessions.
-
+<li>Data Persistence: The weights and biases of the neural network can be saved and loaded from text files, allowing to reuse the trained model in future sessions.</li>
+</ul>
 <h2 text="bold">Project Structure</h2>
 The project is organized into several main classes:
+<ul>
+<li>GlobalVariables: Contains the global variables used throughout the system, such as file paths, training parameters, and input/output data.</li>
 
-GlobalVariables: Contains the global variables used throughout the system, such as file paths, training parameters, and input/output data.
+<li>Files: Handles reading and writing files, including creating, cleaning, and writing configuration and data files.</li>
 
-Files: Handles reading and writing files, including creating, cleaning, and writing configuration and data files.
+<li>Form1: This is the main class for the graphical interface, which handles user interaction, image loading, pixel selection, and displaying results.</li>
 
-Form1: This is the main class for the graphical interface, which handles user interaction, image loading, pixel selection, and displaying results.
-
-PML: Implements the multilayer perceptron, including methods for training, propagation, backpropagation, and data normalization.
-
+<li>PML: Implements the multilayer perceptron, including methods for training, propagation, backpropagation, and data normalization.</li>
+</ul>
 <h2 text="bold">Requirements</h2>
-.NET Framework: The project is developed in C# and requires .NET Framework to run.
+<ul>
+<li>.NET Framework: The project is developed in C# and requires .NET Framework to run.</li>
 
-Visual Studio: It is recommended to use Visual Studio to open and compile the project.
-
+<li>Visual Studio: It is recommended to use Visual Studio to open and compile the project.</li>
+</ul>
 <h2 text="bold">Instructions for Use</h2>
-Compilation: Open the project in Visual Studio and compile it.
+<ul>
+<li>Compilation: Open the project in Visual Studio and compile it.</li>
 
-Execution: Run the application and the graphical interface will open.
+<li>Execution: Run the application and the graphical interface will open.</li>
 
-Loading Images: Use the buttons to load a predefined image or select a custom image from your computer.
+<li>Loading Images: Use the buttons to load a predefined image or select a custom image from your computer.</li>
 
-Pixel Selection: Click anywhere on the image to select a pixel. The system will display the RGB values ​​of the selected pixel.
+<li>Pixel Selection: Click anywhere on the image to select a pixel. The system will display the RGB values ​​of the selected pixel.</li>
 
-Training: If you have not loaded a pre-trained model, you can train the neural network using the corresponding button.
+<li>Training: If you have not loaded a pre-trained model, you can train the neural network using the corresponding button.</li>
 
-Prediction: Once the model is trained, click the "Test" button to predict the color of the selected pixel.
+<li>Prediction: Once the model is trained, click the "Test" button to predict the color of the selected pixel.</li>
 
-Save/Load Model: You can save the trained model for use in future sessions or load a previously saved model.
-
+<li>Save/Load Model: You can save the trained model for use in future sessions or load a previously saved model.</li>
+</ul>
 <h2 text="bold">Configuration and Data Files</h2>
-configuration.txt: Contains the weights and biases of the neural network.
+<ul>
+<li>configuration.txt: Contains the weights and biases of the neural network.</li>
 
-colors.txt: Stores the data for the pixels selected by the user.
-
+<li>colors.txt: Stores the data for the pixels selected by the user.</li>
+</ul>
 <h2 text="bold">Considerations</h2>
-Accuracy: The accuracy of the model depends on the training dataset and the configured parameters (learning rate, number of epochs, etc.).
+<ul>
+<li>Accuracy: The accuracy of the model depends on the training dataset and the configured parameters (learning rate, number of epochs, etc.).</li>
 
-Performance: Training the neural network can be computationally expensive, especially with a large number of epochs.
-
+<li>Performance: Training the neural network can be computationally expensive, especially with a large number of epochs.</li>
+</ul>
 <h2 text="bold">Contributions</h2>
 If you would like to contribute to this project, feel free to fork it and submit a pull request with your improvements.
